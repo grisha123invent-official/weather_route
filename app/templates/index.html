@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">Прогноз погоды на маршруте</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Форма для ввода точек маршрута -->
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-xl font-semibold mb-4">Точки маршрута</h2>
+            <div id="route-points" class="space-y-4">
+                <div class="route-point flex items-center space-x-2">
+                    <input type="text" class="location-input flex-1 p-2 border rounded" placeholder="Введите адрес">
+                </div>
+            </div>
+            <div class="flex space-x-2 mt-4">
+                <button id="add-point" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Добавить точку
+                </button>
+                <button id="get-weather" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                    Получить прогноз
+                </button>
+            </div>
+        </div>
+
+        <!-- Карта -->
+        <div class="bg-white p-6 rounded-lg shadow">
+            <div id="map" class="w-full h-96"></div>
+        </div>
+    </div>
+
+    <!-- Настройки отображения прогноза -->
+    <div class="mt-6 bg-white p-6 rounded-lg shadow">
+        <div class="flex flex-wrap gap-4 mb-4">
+            <!-- Временной интервал -->
+            <select id="time-interval" class="p-2 border rounded">
+                <option value="current">Текущая погода</option>
+                <option value="hourly">Почасовой прогноз</option>
+                <option value="daily">Прогноз по дням</option>
+            </select>
+
+            <!-- Выбор дня для прогноза -->
+            <select id="forecast-day" class="p-2 border rounded" style="display: none;">
+                <option value="0">Сегодня</option>
+                <option value="1">Завтра</option>
+                <option value="2">Послезавтра</option>
+                <option value="3">Через 3 дня</option>
+                <option value="4">Через 4 дня</option>
+                <option value="5">Через 5 дней</option>
+                <option value="6">Через 6 дней</option>
+            </select>
+
+            <!-- Тип параметра -->
+            <select id="chart-type" class="p-2 border rounded">
+                <option value="temperature">Температура</option>
+                <option value="humidity">Влажность</option>
+                <option value="precipitation">Осадки</option>
+                <option value="wind">Скорость ветра</option>
+                <option value="pressure">Давление</option>
+            </select>
+
+            <!-- Тип графика -->
+            <select id="chart-style" class="p-2 border rounded">
+                <option value="line">Линейный график</option>
+                <option value="bar">Столбчатый график</option>
+                <option value="area">Область</option>
+            </select>
+        </div>
+        <div id="weather-chart" class="w-full h-96"></div>
+    </div>
+</div>
+{% endblock %}

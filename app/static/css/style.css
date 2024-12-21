@@ -1,0 +1,33 @@
+#map {
+    min-height: 400px;
+    border-radius: 8px;
+}
+
+.route-point {
+    transition: all 0.3s ease;
+}
+
+.route-point:hover {
+    background-color: #f8f9fa;
+}
+
+.remove-point {
+    transition: color 0.3s ease;
+}
+
+.remove-point:hover {
+    color: #dc2626;
+}
+
+#chart-type, #chart-style, #time-interval, #forecast-day {
+    min-width: 150px;
+}
+
+.ymaps-2-1-79-suggest-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.ymaps-2-1-79-suggest-item:hover {
+    background-color: #f3f4f6;
+}

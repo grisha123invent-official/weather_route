@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды на маршруте</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=acbd6e8d-6f1f-44b5-a784-15d8cf760e15&lang=ru_RU" type="text/javascript"></script>
+    <script src="https://cdn.plot.ly/plotly-2.29.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+</body>
+</html>
